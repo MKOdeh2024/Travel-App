@@ -4,6 +4,7 @@ const tripInfo = document.getElementById('tripInfo');
 const weatherInfo = document.getElementById('weatherInfo');
 const destinationImage = document.getElementById('destinationImage');
 
+
 const geonamesUsername = process.env.Geo_Names_User_Name;
 const weatherbitApiKey = process.env.WeatherBitApiKey;
 const pixabayApiKey = process.env.pixabayApiKey;

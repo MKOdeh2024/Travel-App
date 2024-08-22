@@ -13,9 +13,9 @@ const __dirname = path.dirname(__filename);
 
 export default {
     mode: 'production',
-    entry: './src/index.js',
+    entry: './src/client/index.js',
     output: {
-        path: path.resolve('dist'),
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [{

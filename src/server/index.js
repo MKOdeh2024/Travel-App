@@ -4,7 +4,7 @@ import cors from 'cors';
 import path from 'path';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 8081 || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -12,7 +12,10 @@ app.use(cors());
 
 app.use(express.static('dist'));
 
-app.get('/', (req, res) => {
+// Serve static files from the 'dist' directory
+
+
+app.get('/dev', (req, res) => {
     res.sendFile(path.resolve('dist/index.html'))
 })
 
