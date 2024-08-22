@@ -19,7 +19,7 @@ export default {
         publicPath: '/'
     },
     optimization: {
-        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserPlugin({}), new CssMinimizerPlugin()],
     },
     module: {
         rules: [{

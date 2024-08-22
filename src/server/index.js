@@ -13,8 +13,8 @@ app.use(cors());
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve('dist/index.html'));
-});
+    res.sendFile(path.resolve('dist/index.html'))
+})
 
 // Example endpoint
 app.get('/test', (req, res) => {
