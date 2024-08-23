@@ -60,9 +60,12 @@ export default {
         new WorkboxPlugin.GenerateSW(),
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify('production')
+                NODE_ENV: JSON.stringify(process.env)
                     // add other environment variables here
             }
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
         }),
     ]
 }
