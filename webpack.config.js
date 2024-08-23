@@ -8,6 +8,7 @@ import WorkboxPlugin from 'workbox-webpack-plugin';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import dotenv from 'dotenv';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 
 dotenv.config();
 
@@ -52,14 +53,16 @@ export default {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
+        new NodePolyfillPlugin(),
         new MiniCssExtractPlugin({ filename: '[name].css' }),
         new CssMinimizerPlugin(),
         new TerserPlugin(),
         new WorkboxPlugin.GenerateSW(),
         new webpack.DefinePlugin({
-            'process.env.Geo_Names_User_Name': JSON.stringify(process.env.Geo_Names_User_Name),
-            'process.env.WeatherBitApiKey': JSON.stringify(process.env.WeatherBitApiKey),
-            'process.env.pixabayApiKey': JSON.stringify(process.env.pixabayApiKey),
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+                    // add other environment variables here
+            }
         }),
     ]
 }

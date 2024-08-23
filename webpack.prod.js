@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import path from 'path';
 import url from 'url';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
@@ -26,16 +27,8 @@ export default {
                 },
             },
             {
-                test: /\.css$/,
+                test: /\.(scss|css)$/, // Update this line
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader', // Add this loader to handle SCSS files
-                ],
             },
         ],
     },
@@ -59,5 +52,8 @@ export default {
             clientsClaim: true,
             skipWaiting: true,
         }),
+        new webpack.DefinePlugin({ // Add this block
+            'process.env.NODE_ENV': JSON.stringify('production'),
+        })
     ],
 };

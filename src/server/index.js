@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import fetch from 'node-fetch';
 import cors from 'cors';
 import path from 'path';
-import { handleSubmit } from '../client';
 
 const app = express();
 const port = 3000;
@@ -19,7 +18,7 @@ app.use(express.static('dist'));
 
 
 app.get('/', function(req, res) {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.resolve('dist', 'index.html'));
 });
 
 app.get('/', (req, res) => {
