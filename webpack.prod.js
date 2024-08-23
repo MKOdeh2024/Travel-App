@@ -15,7 +15,7 @@ export default {
     mode: 'production',
     entry: './src/client/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve('dist'),
     },
     module: {
         rules: [{
@@ -29,6 +29,14 @@ export default {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader', // Add this loader to handle SCSS files
+                ],
+            },
         ],
     },
     optimization: {
@@ -40,7 +48,7 @@ export default {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './src/index.html',
+            template: './src/client/views/index.html',
             filename: './index.html',
         }),
         new MiniCssExtractPlugin({

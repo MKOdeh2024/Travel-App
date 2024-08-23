@@ -1,23 +1,33 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import fetch from 'node-fetch';
 import cors from 'cors';
 import path from 'path';
+import { handleSubmit } from '../client';
 
 const app = express();
-const port = 8081 || 3000;
+const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
 
 app.use(express.static('dist'));
 
 // Serve static files from the 'dist' directory
 
 
-app.get('/dev', (req, res) => {
-    res.sendFile(path.resolve('dist/index.html'))
-})
+app.get('/', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
+
+app.get('/', (req, res) => {
+    let city = req.query.city;
+    let date = req.query.date;
+    res.json({ message: 'Test endpoint working!' });
+});
+
 
 // Example endpoint
 app.get('/test', (req, res) => {
