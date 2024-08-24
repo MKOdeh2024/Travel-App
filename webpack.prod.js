@@ -54,6 +54,9 @@ export default {
         }),
         new webpack.DefinePlugin({ // Add this block
             'process.env.NODE_ENV': JSON.stringify('production'),
+            'process.env.geonamesUsername': JSON.stringify(process.env.geonamesUsername),
+            'process.env.WeatherBitApiKey': JSON.stringify(process.env.WeatherBitApiKey),
+            'process.env.pixabayApiKey': JSON.stringify(process.env.pixabayApiKey),
         })
     ],
 };

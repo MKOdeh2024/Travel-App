@@ -5,7 +5,7 @@ const weatherInfo = document.getElementById('weatherInfo');
 const destinationImage = document.getElementById('destinationImage');
 
 
-const geonamesUsername = process.env.Geo_Names_User_Name;
+const geonamesUsername = process.env.geonamesUsername;
 const weatherbitApiKey = process.env.WeatherBitApiKey;
 const pixabayApiKey = process.env.pixabayApiKey;
 
