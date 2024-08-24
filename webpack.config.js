@@ -18,6 +18,7 @@ const __dirname = dirname(fileURLToPath(
 export default {
     entry: './src/client/index.js',
     mode: 'production',
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -55,7 +56,13 @@ export default {
         }),
         new NodePolyfillPlugin(),
         new MiniCssExtractPlugin({ filename: '[name].css' }),
-        new CssMinimizerPlugin(),
+        new CssMinimizerPlugin({
+            minimizerOptions: {
+                preset: ['default', {
+                    discardComments: { removeAll: true },
+                }],
+            },
+        }),
         new TerserPlugin(),
         new WorkboxPlugin.GenerateSW(),
         new webpack.DefinePlugin({
