@@ -1,16 +1,4 @@
-// Variables
-$primary-color: #FF6B6B;
-$secondary-color: #4ECDC4;
-$text-color: #333;
-$background-color: #F7FFF7;
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-// Global styles
+/* Global styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,40 +7,46 @@ $background-color: #F7FFF7;
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: $background-color;
-    color: $text-color;
+    background-color: #F7FFF7;
+    color: #333;
     line-height: 1.6;
 }
 
-// Header
+/* Header */
 header {
-    background-color: $primary-color;
+    background-color: #FF6B6B;
     color: white;
     padding: 1rem;
-    @include flex-center;
+    display: flex;
     justify-content: space-between;
-    h1 {
-        font-size: 2rem;
-        font-weight: 700;
-    }
-    nav ul {
-        list-style: none;
-        display: flex;
-        li {
-            margin-left: 1rem;
-            a {
-                color: white;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                &:hover {
-                    color: $secondary-color;
-                }
-            }
-        }
-    }
+    align-items: center;
 }
 
-// Main content
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #4ECDC4;
+}
+
+/* Main content */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -62,59 +56,70 @@ main {
 .hero {
     text-align: center;
     margin-bottom: 3rem;
-    h2 {
-        font-size: 3rem;
-        color: $primary-color;
-        margin-bottom: 1rem;
-    }
-    p {
-        font-size: 1.2rem;
-    }
 }
 
+.hero h2 {
+    font-size: 3rem;
+    color: #FF6B6B;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Trip Planner */
 .trip-planner {
     background-color: white;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    h2 {
-        margin-bottom: 1rem;
-        color: $secondary-color;
-    }
-    form {
-        display: flex;
-        flex-direction: column;
-        input,
-        button {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-        button {
-            background-color: $secondary-color;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            &:hover {
-                background-color: darken($secondary-color, 10%);
-            }
-        }
-    }
 }
 
+.trip-planner h2 {
+    margin-bottom: 1rem;
+    color: #4ECDC4;
+}
+
+.trip-planner form {
+    display: flex;
+    flex-direction: column;
+}
+
+.trip-planner input,
+.trip-planner button {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.trip-planner button {
+    background-color: #4ECDC4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.trip-planner button:hover {
+    background-color: #41b4ac;
+}
+
+/* Trip Results */
 .trip-results {
     margin-top: 2rem;
-    &.hidden {
-        display: none;
-    }
-    h2 {
-        color: $secondary-color;
-        margin-bottom: 1rem;
-    }
 }
 
-// Animations
+.trip-results.hidden {
+    display: none;
+}
+
+.trip-results h2 {
+    color: #4ECDC4;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -128,14 +133,16 @@ main {
     animation: fadeIn 1s ease-in;
 }
 
-// Responsive design
+/* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        nav ul {
-            margin-top: 1rem;
-        }
     }
+    
+    header nav ul {
+        margin-top: 1rem;
+    }
+    
     .hero h2 {
         font-size: 2rem;
     }
