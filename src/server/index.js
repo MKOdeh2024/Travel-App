@@ -27,7 +27,13 @@ app.get('/', (req, res) => {
     res.json({ message: 'Test endpoint working!' });
 });
 
-
+app.get('/api/keys', (req, res) => {
+    res.json({
+        geonamesUsername: process.env.geonamesUsername,
+        WeatherBitApiKey: process.env.WeatherBitApiKey,
+        pixabayApiKey: process.env.pixabayApiKey
+    });
+});
 // Example endpoint
 app.get('/test', (req, res) => {
     res.json({ message: 'Test endpoint working!' });

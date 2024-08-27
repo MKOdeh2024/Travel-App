@@ -5,9 +5,22 @@ const weatherInfo = document.getElementById('weatherInfo');
 const destinationImage = document.getElementById('destinationImage');
 
 
-const geonamesUsername = process.env.geonamesUsername;
-const weatherbitApiKey = process.env.WeatherBitApiKey;
-const pixabayApiKey = process.env.pixabayApiKey;
+// In your client-side JavaScript (app.js)
+fetch('/api/keys')
+    .then(response => response.json())
+    .then(data => {
+        const geonamesUsername = data.geonamesUsername;
+        const weatherbitApiKey = data.WeatherBitApiKey;
+        const pixabayApiKey = data.pixabayApiKey;
+
+        // Now you can use these variables in your code
+        // ...
+    })
+    .catch(error => {
+        console.error('Error fetching API keys:', error);
+    });
+
+
 
 async function handleSubmit(event) {
     event.preventDefault();
