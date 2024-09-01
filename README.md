@@ -15,5 +15,3 @@ The Travel App is a web application that allows users to plan their trips by ent
 
 - **Node.js** (v22.4.0)
 - **npm** (version 6.x.x)
-
-## Getting Started
