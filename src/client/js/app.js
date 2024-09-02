@@ -1,4 +1,4 @@
-const geonamesURL = 'http://api.geonames.org/searchJSON?q=';
+const geonamesURL = 'http://api.geonames.org/searchJSON?';
 const geonamesKey = process.env.GEONAMES_USERNAME;
 const weatherbitURL = 'https://api.weatherbit.io/v2.0/forecast/daily?';
 const weatherbitKey = process.env.WEATHERBIT_API_KEY;
@@ -20,7 +20,7 @@ export const handleSubmit = async (event) => {
             
             updateUI(geoData, weatherData, imageData, date);
         } catch (error) {
-            console.error('Error:', error);
+            console.log('Error:', error);
         }
     } else {
         alert('Please enter both a destination and a date.');
