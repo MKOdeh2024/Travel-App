@@ -14,10 +14,12 @@ app.use(express.static('dist'));
 
 const port = 3000;
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.sendFile('dist/index.html')
 });
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;
