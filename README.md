@@ -61,11 +61,20 @@ The app relies on API keys for accessing the GeoNames, Weatherbit, and Pixabay s
 
 - To start the server:
 
-   ```bash
-     npm start
+bash
+Copy code
+npm start
+Future Improvements
+Add user authentication for personalized trip planning.
+Implement a feature for saving and sharing trip itineraries.
+Improve the UI with responsive design enhancements.
+Additional Resources
+For more tips on writing excellent README files, check out:
 
+Make a README
+Basic writing and formatting syntax
+vbnet
+Copy code
 
-## Future Improvements
-- Add user authentication for personalized trip planning.
-- Implement a feature for saving and sharing trip itineraries.
-- Improve the UI with responsive design enhancements.
+This version includes information on setting up API keys, installation instructions, usage commands, and future improvements. It also maintains the use of correct markdown and project-specific text as suggested.
+```
