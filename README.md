@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The Travel App is a web application that allows users to plan their trips by entering a destination and a travel date. The app then fetches weather information and an image of the destination from various APIs and displays the details on the page.
+The Travel App is a web application that allows users to plan their trips by entering a destination and a travel date. The app fetches weather information and an image of the destination from various APIs and displays the details on the page.
 
 ## Technologies Used
 
@@ -15,3 +15,64 @@ The Travel App is a web application that allows users to plan their trips by ent
 
 - **Node.js** (v22.4.0)
 - **npm** (version 10.8.2)
+
+## Installation Instructions
+
+1. Clone the repository:
+
+   ```bash
+
+git clone <https://github.com/yourusername/travel-app.git>
+Navigate to the project directory:
+bash
+Copy code
+cd travel-app
+Install the required dependencies:
+bash
+Copy code
+npm install
+API Keys Setup
+The app relies on API keys for accessing the GeoNames, Weatherbit, and Pixabay services. Follow these steps to configure the API keys:
+
+Create a .env file in the root directory of the project.
+Add the following lines to the .env file, replacing YOUR_API_KEY with your actual API keys:
+env
+Copy code
+GEONAMES_USERNAME=YOUR_GEONAMES_USERNAME
+WEATHERBIT_API_KEY=YOUR_WEATHERBIT_API_KEY
+PIXABAY_API_KEY=YOUR_PIXABAY_API_KEY
+If you are not using dotenv, update the API keys directly in the respective files:
+
+GeoNames: Update the username in src/server/geonames.js.
+Weatherbit: Update the API key in src/server/weatherbit.js.
+Pixabay: Update the API key in src/server/pixabay.js.
+Usage
+To run the app in development mode:
+
+bash
+Copy code
+npm run build-dev
+To build the app for production:
+
+bash
+Copy code
+npm run build-prod
+To start the server:
+
+bash
+Copy code
+npm start
+Future Improvements
+Add user authentication for personalized trip planning.
+Implement a feature for saving and sharing trip itineraries.
+Improve the UI with responsive design enhancements.
+Additional Resources
+For more tips on writing excellent README files, check out:
+
+Make a README
+Basic writing and formatting syntax
+vbnet
+Copy code
+
+This version includes information on setting up API keys, installation instructions, usage commands, and future improvements. It also maintains the use of correct markdown and project-specific text as suggested.
+```
