@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+import webpack from 'webpack'
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
